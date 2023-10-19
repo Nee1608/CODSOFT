@@ -37,9 +37,9 @@ def view():
     li = file.readlines()
     if(len(li) > 0):
         # Printing 1st line with column name
-        print(f"{'|'}{'-'*94}{'|'}")
-        print("|{:^19}|{:^14}|{:^19}|{:^39}|".format("NAME","MOBILE","MAIL","ADDRESS"))
-        print(f"{'|'}{'-'*94}{'|'}")
+        print(f"{'|'}{'-'*140}{'|'}")
+        print("|{:^20}|{:^14}|{:^20}|{:^60}|".format("NAME","MOBILE","MAIL","ADDRESS"))
+        print(f"{'|'}{'-'*140}{'|'}")
     for line in li:
         row = line.split('-')
         name = row[0]
@@ -47,8 +47,8 @@ def view():
         mail = row[2].strip('`')
         address = row[3].rstrip("\n").strip('`')
         # Printing all rows of records
-        print("|{:^19}|{:^14}|{:^19}|{:^39}|".format(name, mobile, mail, address))
-        print(f"{'|'}{'-'*94}{'|'}")
+        print("|{:^20}|{:^14}|{:^20}|{:^60}|".format(name, mobile, mail, address))
+        print(f"{'|'}{'-'*140}{'|'}")
     file.close()
 
 # SEARCH Contact List
@@ -68,11 +68,11 @@ def search():
             address = row[3].rstrip("\n").strip('`')
             # Printing 1st line with column name
             if(find==1):
-                print(f"{'|'}{'-'*94}{'|'}")
-                print("|{:^19}|{:^14}|{:^19}|{:^39}|".format("NAME","MOBILE","MAIL","ADDRESS"))
-                print(f"{'|'}{'-'*94}{'|'}")
-            print("|{:^19}|{:^14}|{:^19}|{:^39}|".format(name, mobile, mail, address))
-            print(f"{'|'}{'-'*94}{'|'}")
+                print(f"{'|'}{'-'*140}{'|'}")
+                print("|{:^20}|{:^14}|{:^20}|{:^60}|".format("NAME","MOBILE","MAIL","ADDRESS"))
+                print(f"{'|'}{'-'*140}{'|'}")
+            print("|{:^20}|{:^14}|{:^20}|{:^60}|".format(name, mobile, mail, address))
+            print(f"{'|'}{'-'*140}{'|'}")
     if(find<1):
         print("\nRESULT : No record found with this input")
     file.close()
